@@ -6,8 +6,27 @@
     padding: 4px;
     border: 1px solid grey;
     background-color: skyblue;
-    grid-template-rows: 150px 150px;
-    grid-template-columns: 150px 150px 150px 150px 150px;
+    /* fractional units and repeat() */
+    /* grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 2fr) repeat(3, 1fr); */
+
+    /* min() max() */
+    /* grid-template-rows: repeat(2, min(200px, 50%));
+    grid-template-columns: repeat(5, max(120px, 15%)); */
+
+    /* minmax() */
+    /* grid-template-rows: repeat(2, 1fr); */
+    /* grid-template-columns: repeat(5, minmax(150px, 200px)); */
+
+    /* clamp() clamp(minimum-size, ideal-size, maximum-size) */
+    /* grid-template-columns: repeat(5, clamp(150px, 20%, 200px)); */
+
+    /* auto-fit and auto-fill enhanced with minmax() */
+    /* auto-fit = eats all available space
+       auto-fill = once max is reached, it stays there no matter the free space */
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
   }
   
   .grid-item {
